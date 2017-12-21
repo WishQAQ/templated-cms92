@@ -1,0 +1,87 @@
+@charset "utf-8";
+.part_bottom {
+    padding-left: 15px;
+    margin: 0 auto;
+    overflow: hidden;
+	margin-top: 8px;
+    width: 1000px;
+	font-size:15px;
+	font-family:微软雅黑;
+}
+.part_bottom .listbox {
+    background: url("../public/title_bg.gif") no-repeat scroll 0 0 transparent;
+    border-right: 1px solid #DEDEDE;
+    float: left;
+    width: 484px;
+
+}
+.part_bottom .listbox h2 {
+    color: #575757;
+    font-size: 14px;
+    height: 31px;
+    line-height: 31px;
+    text-indent: 30px;
+    text-shadow: 1px 1px 1px white;
+}
+.part_bottom .listbox h2 span {
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+    padding-right: 15px;
+}
+a {
+    color: #4F4F4F;
+    text-decoration: none;
+}
+.part_bottom .listbox ul {
+    padding: 8px 0;
+}
+.part_bottom .listbox ul li {
+    background: url("../public/list_icon.gif") no-repeat scroll 3px 8px transparent;
+    line-height: 20px;
+    margin: 4px 0;
+    padding-left: 18px;
+
+}
+.part_bottom .listbox ul li span.date {
+    color: #999999;
+    float: right;
+    margin-right: 20px;
+}
+.part_bottom .listbox ul li {
+    line-height: 20px;
+	list-style-type:none;
+}
+.part_bottom .box2 {
+    background: url("../public/title_bg2.gif") no-repeat scroll 0 0 transparent;
+    border: medium none;
+}
+.part_bottom .listbox h2 {
+    color: #575757;
+    font-size: 14px;
+    height: 31px;
+    line-height: 31px;
+    text-indent: 30px;
+    text-shadow: 1px 1px 1px white;
+}
+.part_bottom .listbox h2 span {
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+    padding-right: 15px;
+}
+.part_bottom .listbox ul {
+    padding: 8px 0;
+}
+.part_bottom .listbox ul.sec li {
+    background: url("../public/list_icon.gif") no-repeat scroll 15px 8px transparent;
+    padding-left: 10px;
+    text-indent: 20px;
+}
+.part_bottom .listbox ul.sec li span.date {
+    margin-right: 0;
+}
+.part_bottom .listbox ul.sec li {
+    text-indent: 20px;
+	list-style-type:none;	
+}

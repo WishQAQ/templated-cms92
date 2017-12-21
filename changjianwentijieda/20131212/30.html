@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="x-ua-compatible" content="ie=7"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>怎样删除掉U盘里的记录信息_U盘装系统_好用官网_视频教程_好用u盘启动盘制作工具</title>
+<meta name="keywords" content="怎样,删,除掉,盘里,的,记录,信息,使用,盘," />
+<meta name="description" content="使用U盘过程中，系统会记录下大量我们的使用信息，下面就说说如何删除掉这些记录信息。 1. 往系统里面添加环境变量devmgr_shownonpresent_devices，值为1 2. 运行设备管理器，打开查看隐藏" />
+<link href="/templets/default/public/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="header">
+<div class="headall">
+<div class="toplogo"><a href="/"><img src="/templets/default/images/logo.png" ></a></div>
+
+<div class="toptext"><p>好用u盘装系统，最干净的u盘装系统软件。</p></div>
+<div class="nav">
+<ul>
+
+<li><a href="/" >首  页</a></li>
+ 
+<li><a href='/tutorial/'>使用教程</a></li>
+      	<li class='current'><a href='/article/' >文章中心</a></li>
+<li><a href='/down/'>下载中心</a></li>
+      	
+<li><a href='/help/'>帮助中心</a></li>
+      	
+
+</ul>
+</div>
+</div>
+</div>
+
+<div id="innerbody">
+<div class="innerbodyall">
+<div class="downleft">
+<div class="downtitle"><li>常见问题解答</li></div>
+<div class="help-view">
+<h4>怎样删除掉U盘里的记录信息</h4>
+<p>作者：admin
+--------------  文章来源：未知 发布时间：2013-12-12 13:36点击：<script src="/plus/count.php?view=yes&aid=30&mid=1"type='text/javascript' language="javascrip" ></script>次 </p>
+</div>
+<div class="down-intro">
+
+<div class="content">
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	使用U盘过程中，系统会记录下大量我们的使用信息，下面就说说如何删除掉这些记录信息。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	1. 往系统里面添加环境变量devmgr_shownonpresent_devices，值为1</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	2. 运行设备管理器，打开查看隐藏设备。展开磁盘驱动器、储存卷两处，把和U盘有关的Kill掉。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	3. 打开计算机管理，把可移动存储相关的删除。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	4. 把1中加入的系统环境变量删除。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	到此为止，现在有可能还不能全部删除注册表中的usb使用记录，在HKEY_LOCAL_MACHINE</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	SYSTEMControlSet002EnumUSBSTOR中仍然可能会有使用记录，然后打开强大的regedt3</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	2工具，找到该项，修改权限，然后删除子项。另外HKEY_LOCAL_MACHINESYSTEMControl</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	Set002EnumUSB中的一些和USB Storage Mass设备相关的也要删除。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	清除注册表的U盘使用记录<br style="margin: 0px; padding: 0px;" />
+	1、按开始--〉运行，在输入框里输入命令：regedit</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	2、删除注册表中以下目录的USBSTOR子项。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	（1）HKEY_LOCAL_MACHINESYSTEMControlSet001EnumUSBSTOR</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	（2）HKEY_LOCAL_MACHINESYSTEMControlSet002EnumUSBSTOR</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	（3）HKEY_LOCAL_MACHINESYSTEMControlSet003EnumUSBSTOR</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	（4）HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTOR</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	删除上述USBSTOR子项后，一般保密检查软件就不能检查了。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	如果需要彻底清除USB使用记录，完成上述操作后，可以接着如下的操作过程：</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	1、删除如下USB子项下除ROOT_HUB、ROOT_HUB20外的所有记录。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	（1）HKEY_LOCAL_MACHINESYSTEMControlSet001EnumUSB</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	（2）HKEY_LOCAL_MACHINESYSTEMControlSet002EnumUSB</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	（3）HKEY_LOCAL_MACHINESYSTEMControlSet003EnumUSB</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	（4）HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSB</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	权限操作与上述操作一致。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	2、删除DeviceClasses下的a5d...、53f...等含usb字眼的部分子项。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	（1）HKEY_LOCAL_MACHINESYSTEMControlSet001ControlDeviceClasses{a5dcbf10-6530-11d2-901f-00c04fb951ed}</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	（2）HKEY_LOCAL_MACHINESYSTEMControlSet002ControlDeviceClasses{a5dcbf10-6530-11d2-901f-00c04fb951ed}</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	（3）HKEY_LOCAL_MACHINESYSTEMControlSet003ControlDeviceClasses{a5dcbf10-6530-11d2-901f-00c04fb951ed}</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	（4）HKEY_LOCAL_MACHINESYSTEMControlSet001ControlDeviceClasses{53f56307-b6bf-11d0-94f2-00a0c91efb8b}</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	##?#USBSTOR#Disk&amp;Ven_Alcor&amp;Prod_Flash_Disk&amp;Rev_8.07#2624BFBB&amp;0#{53f56307-b6bf-11d0-94f2-00a0c91efb8b}<br style="margin: 0px; padding: 0px;" />
+	......<br style="margin: 0px; padding: 0px;" />
+	其他操作与上一个步骤相同。</p>
+
+</div>
+<div class="context"><div style="width:290px;height:30px;float:left;">上一篇：<a href='/changjianwentijieda/20131212/29.html'>U盘量产、U盘启动、U盘硬件基础</a>  </div><div style="width:290px;height:30px;float:right;">下一篇：<a href='/changjianwentijieda/20131212/31.html'>没有光驱怎么用U盘装系统</a> </div></div>
+</div>                    
+                    
+</div>
+
+<!--右侧-->
+<div class="downright">
+  <div class="newdown">
+<div class="newdowntop">
+<img src="/uploads/load.jpg"/>
+<div class="newdowninfo"><a href="/down/2013/1212/49.html">下载最新版本</a><br/>版本：V6.9<br/>更新：2013-12-12</div>
+</div>
+<div class="newdownfoot">
+<a href="/down/2013/1212/49.html">
+
+<img src="/uploads/down.jpg" border="0"></a></div>
+</div>
+
+
+
+<div class="helptj">
+<div class="tjtitle"><h4>推荐下载<h4></div>
+<div class="tjlst">
+<ul>
+
+  <li><a href="/down/2013/1212/49.html">好用官网U盘装系统V6.9(2003,win8内核)</a></li>
+<li><a href="/down/2013/1212/48.html">好用官网U盘装系统V6.8(2003,win8内核)全</a></li>
+<li><a href="/down/2013/1212/47.html">好用官网U盘装系统V6.7(2003,win8内核)</a></li>
+<li><a href="/down/2013/1212/46.html">好用U盘启动盘制作工具V6.5(2003,win8内</a></li>
+<li><a href="/down/2013/1212/45.html">好用U盘启动盘制作工具V6.3 (xp,2003,w</a></li>
+
+</ul>
+</div>
+</div>
+
+
+
+<div class="helptj">
+<div class="tjtitle"><h4>热门下载</h4></div>
+<div class="tjlst">
+<ul>
+
+  <li><a href="/down/2013/1212/45.html">好用U盘启动盘制作工具V6.3 (xp,2003,w</a></li>
+<li><a href="/down/2013/1212/47.html">好用官网U盘装系统V6.7(2003,win8内核)</a></li>
+<li><a href="/down/2013/1212/44.html">好用U盘启动盘制作工具V5.1 (xp,2003,w</a></li>
+<li><a href="/down/2013/1212/46.html">好用U盘启动盘制作工具V6.5(2003,win8内</a></li>
+<li><a href="/down/2013/1212/48.html">好用官网U盘装系统V6.8(2003,win8内核)全</a></li>
+
+
+
+
+</ul>
+</div>
+</div>
+
+
+
+
+<div class="helptj">
+<div class="tjtitle"><h4>帮助中心</h4></div>
+<div class="tjlst">
+<ul>
+
+  <li><a href="/help/2013/1212/17.html">安全模式，局域网拓朴结</a></li>
+<li><a href="/help/2013/1212/16.html">U盘装系统，电脑病毒之四</a></li>
+<li><a href="/help/2013/1212/15.html">安全模式，破解计算机密</a></li>
+<li><a href="/help/2013/1212/14.html">U盘装系统，通过Skydrive转</a></li>
+<li><a href="/help/2013/1212/13.html">安全模式，提高搜索速度</a></li>
+
+
+</ul>
+</div>
+</div>
+
+<!--
+<div class="other">
+<div class="bbs"><a href="#"><img src="/templets/default/public/bbs.gif" border="0"/></a></div>
+</div>
+-->
+</div>
+
+<!--右侧END-->
+
+
+</div>
+
+
+<div id="innerfoot"></div>
+
+
+<div id="footer">
+<div class="footall">
+<div class="copyright">
+    <p>Copyright (C) 2012 <a href="/" target=_blank>好用u盘启动盘制作工具</a> <a href=/data/rssmap.html target=_blank>网站地图</a> Allright Reserved. <a href=http://www.dedecms.com target='_blank'>Power by DedeCms</a><br/>
+蜀ICP备xxxxxxxx号   站长e-mail:123456@qq.conm&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+</div>
+</div>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;uid=2190889" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->
+
+
+
+
+
+</div>
+
+</body>
+</html>

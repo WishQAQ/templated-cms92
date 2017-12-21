@@ -1,0 +1,100 @@
+.product-list {
+width: 620px;
+float:left;
+font: 12px/1.6 Tahoma,Verdana,Arial,"宋体";
+}
+
+
+.product-list .list
+{ 
+width: 620px;
+margin: 0;
+
+}
+
+.t-1 {
+height: 35px;
+line-height: 35px;
+border-bottom: 1px solid #F0F0F0;
+}
+.m-b-15 {
+margin-bottom: 15px;
+float:left;
+}
+
+.clearfix {
+clear: both;
+zoom: 1;
+}
+.list li {
+width: 300px;
+float: left;
+padding-top: 15px;
+_overflow: hidden;
+display: list-item;
+}
+.list .ws .pic {
+background-position: 0 -46px;
+}
+.list .pic {
+width: 46px;
+height: 48px;
+float: left;
+margin-right: 10px;
+}
+.list .pic {
+background: url(../public/up123.jpg) no-repeat;
+}
+.list .cont {
+overflow: hidden;
+display:block;
+height:118px;
+margin:0;
+padding:0;
+}
+.list h3 {
+font-family: "微软雅黑";
+padding-bottom: 1px;
+font-weight: normal;
+margin:0;
+padding:0;
+}
+h3 {
+font-size: 15px;
+display: block;
+margin-bottom:5px;
+}
+
+.list h3 a {
+position: relative;
+_zoom: 1;
+color: #151515;
+font-weight: bolder;
+}
+.list p {
+padding-bottom: 5px;
+display: block;
+
+}
+.btn-1 {
+width: 135px;
+height: 32px;
+line-height: 23px;
+color: #20A135;
+text-align: left;
+
+
+}
+.btn {
+border: 0;
+cursor: pointer;
+display: inline-block;
+
+
+}
+.list .btnS {
+
+background: url(../public/mfxz.jpg) no-repeat;
+height: 28px; margin-left: 55px;
+
+}

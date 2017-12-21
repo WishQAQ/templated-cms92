@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="x-ua-compatible" content="ie=7"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WINPE核心DIY修改教程_U盘装系统_好用官网_视频教程_好用u盘启动盘制作工具</title>
+<meta name="keywords" content="WINPE,核心,DIY,修改,教程,WINPE,外置,程序" />
+<meta name="description" content="WINPE外置程序修改(一) 本文不涉及任何技术性的东西，期望目的在于让刚接触 PE 的朋友能对 PE 进行简单的修改，以适合自己使用。我只是根据自己学习的过程，将它们整理到一起而已" />
+<link href="/templets/default/public/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="header">
+<div class="headall">
+<div class="toplogo"><a href="/"><img src="/templets/default/images/logo.png" ></a></div>
+
+<div class="toptext"><p>好用u盘装系统，最干净的u盘装系统软件。</p></div>
+<div class="nav">
+<ul>
+
+<li><a href="/" >首  页</a></li>
+ 
+<li><a href='/tutorial/'>使用教程</a></li>
+      	<li class='current'><a href='/article/' >文章中心</a></li>
+<li><a href='/down/'>下载中心</a></li>
+      	
+<li><a href='/help/'>帮助中心</a></li>
+      	
+
+</ul>
+</div>
+</div>
+</div>
+
+<div id="innerbody">
+<div class="innerbodyall">
+<div class="downleft">
+<div class="downtitle"><li>常见问题解答</li></div>
+<div class="help-view">
+<h4>WINPE核心DIY修改教程</h4>
+<p>作者：admin
+--------------  文章来源：未知 发布时间：2013-12-12 13:36点击：<script src="/plus/count.php?view=yes&aid=33&mid=1"type='text/javascript' language="javascrip" ></script>次 </p>
+</div>
+<div class="down-intro">
+
+<div class="content">
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	WINPE外置程序修改(一)<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 本文不涉及任何技术性的东西，期望目的在于让刚接触 PE 的朋友能对 PE 进行简单的修改，以适合自己使用。我只是根据自己学习的过程，将它们整理到一起而已(有可能我自己认识错误导致后面的内容错误，请高手指正，如果高手们有耐心看的话)。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp; 包含以下几个方面的内容：<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1、增减外置程序<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2、定制登录过程<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3、修改外置程序目录名<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4、修改系统设定(注册表)<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5、添加驱动</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1、UltraISO / WinRAR<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2、CAB 打包软件&nbsp;&nbsp; MakeCAB</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1、将光盘映像根目录中的 WinPE.IS_ 用 UltraISO 或 WinRAR 提取出来<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2、将名称改成 WinPE.CAB(不改也可以，但用 WinRAR 打开会麻烦点)<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3、用 WinRAR 将其中的 WinPE.ISO 解压出来<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4、用同样的方法，将 WinPE.ISO 中的 WXPE\SYSTEM32\PECMD.INI 提取出来<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (要修改什么文件就提取什么文件，后面的改注册表也要用到此方法)<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5、按自己的需要修改提取出来的文件<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6、将修改后的文件放入 WinPE.ISO 中替换原来的(目录位置一定要相同)<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7、用 CAB 打包工具将 WinPE.ISO 重新打包为 WinPE.IS_<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8、再将 WinPE.IS_ 放到好用的光盘映像中替换原来的</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1、内部配置文件 PECMD.INI(修改方法见前面说明)<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2、\外置程序\WinPE.INI&nbsp;&nbsp;&nbsp;&nbsp; (前面的根指光盘映像的根目录)<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3、\WINPE安装\SETUP.INI (好用的安装卸载程序要用它)<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4、外置程序的目录名(这个是当然的)</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1、用记事本打开 INI 文件，将光标定在文件最前面<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2、菜单：编辑－替换...<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3、在&ldquo;查找内容&rdquo;编辑框中输入&quot;\外置程序&quot;(不含引号)<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4、在&ldquo;替换为&rdquo;编辑框中输入&quot;\NEWNAME&quot;(不含引号)<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5、点全部替换<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6、在&ldquo;查找内容&rdquo;编辑框中输入&quot;外置程序\&quot;(不含引号)<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7、在&ldquo;替换为&rdquo;编辑框中输入&quot;NEWNAME\&quot;(不含引号)<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8、点全部替换<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9、保存</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp; 需要会使用的几个工具软件：<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 一、增减外置程序</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 外置程序在光盘的&ldquo;外置程序&rdquo;目录中，对应的配置文件是该目录下的 WinPE.INI</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 删除程序只须删除该软件在外置程序目录对应的子目录，再删除 WinPE.INI 中相应的 LINK 创建快捷方式的语句行即可。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 添加程序正好相反，将绿色软件放到外置程序目录中，在 WinPE.INI 中加入相应的 LINK 语句行创建快捷方式即可(参照其它 LINK 语句，复制一行，只须要改一下快捷方式的位置、名称/目标程序的目录名、可执行文件名)。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 这里所说的绿色软件是指能在 PE 中运行绿软，网上所见的大多绿软并不是真正的绿色软件，应该叫准绿色软件或者免安装软件。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 实际上很多并不是为 PE 准备的软件也是可以在 PE 中运行的，用一个笨办法来判断一个普通的绿软是否可以直接在 PE 中运行，启动 PE 环境，找到该软件所在目录，复制一份备份，然后将该目录和目录下的所有文件属性改为只读，直接双击目录内的可执行文件，看能否运行，运行后各项功能都使用一下看是否正常，如无异常，则可按上面的方法简单加入。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 如运行异常，有可能缺某些库文件(这种情况一般有提示)，或它在自己的目录内写东西，或依赖注册表中的某些键值，这就需要动点手脚，如准备缺少的库文件，看它自己的目录下有没有配置文件可以修改，在 XP 中运行监视它要读些哪些注册表项。这种情况对不同的软件解决的方法不同，也可能无法解决，不过此种情况超出本文的定位，不再详述。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp; 二、定制登录过程</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 这一项改动需要熟悉 PECMD 各命令的用法，读懂配置内外配置文件，最好对系统登录的过程有点了解。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 只作为兴趣，因为好用的登录顺序几乎也没什么可改动的了，可以留给我们定制的就是改改提示句、外置程序的加载方式、调整一下细节而已。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 这一过程会涉及到内部配置文件:<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 注：用 UltraISO 修改 ISO 映像文件时最好用另存，以免改错了原来的备份也没有了。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp; 三、修改外置程序目录名</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 要改动的地方有 3 个文件 + 1 个目录名：<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 将三个 INI 文件提取出来按下面的步骤修改，假设新名为 &quot;NEWNAME&quot;：<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 用修改后的文件替换下载的光盘映像中原来的(外置程序这个目录的名字可以直接在 UltraISO 中改)</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 说得这么麻烦只是为了防止漏改或者将注释也给改了，实际上新版本因采用的 %CurDir% 这个环境变量后，要改的只有几个地方，手工改也是可以的。<br style="margin: 0px; padding: 0px;" />
+	&nbsp;<br style="margin: 0px; padding: 0px;" />
+	WinPE核心DIY修改教程(二)<br style="margin: 0px; padding: 0px;" />
+	首先，要DIY，就要掌握一个大概的原理，这里说的只是大概。那么PE是如何运作的？其实PE的文件从粗略来分，可以分为核心和外置程序两个部分，相信外置是大家所关心的，但是这里要先讲核心，因为外置是在一定程度上依赖核心的。<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; PE的核心格式可分为三种ISO格式，NTFS IMG格式，FAT IMG格式，这三种格式有什么不同先不用管，先讲一下PE的运作<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; PE其实就类似一个未安装的系统（只是类似，还是有区别的），PE的系统文件就在PE的核心中，PE启动时，会先将一部分内存当作硬盘来使用，我们暂且可以称其为Ramdisk盘，当Ramdisk盘设置好了，就会根据核心中的txtsetup.sif文件的设置来进行&ldquo;安装&rdquo;，也就是把核心中的文件释放到Ramdisk盘当中，也就是PE启动后我们所看到的X盘。当PE&ldquo;安装&rdquo;好后就可以进入PE了。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 接下来，在进入PE的桌面前，会根据x:\I386(或WXPE或其他文件夹名)\system32\PECMD.INI文件来进行PE的一些设置，和调用外部配置文件。而外部配置文件就是和外置程序有关的了。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; PE的启动过程基本就这样（不包括引导过程），接下来要讲讲X盘大小的设置问题，X盘正如上面所说的，是PE的系统文件所在地，那么在调整X盘的大小前弄明白调整它的意义，举一个简单的例子，假如一个PE的系统文件一共有60M，而X盘的大小只有61M，那么就有1M的空间剩余。假如你想启动网络，那当然是要先安装网卡驱动。而网卡驱动当然不只1M那么小，这样说来，X盘的剩余空间就不足够你安装网卡驱动。那么网络就会无法启动，假如我把X盘调整到70M，那么10M的剩余空间就足够安装网卡驱动了。<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; 那么现在，结果出来了，当你的外置程序中含有需要解压到核心的东西时，例如驱动，则核心中就必须预留空间。那么意义明确了，不同的PE，核心就需要进行相应的调整，这样才可以达到最大利用率。&nbsp;&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; ISO核心PE的X盘大小调整方法（以毛桃0911为例）</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 找到核心文件WINPE.IS_，用WINRAR打开,把里面的WINPE.ISO提出来.用ULTRAISO打开WINPE.ISO,找到WXPE\SYSTEM32\PECMD.INI文件,看到FBWF这行,这条命令就是用来设置X盘大小的,不需要懂原理,会用就可以了.<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 命令参数如下:<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; FBWF [P可用内存百分数] [L最小值] [H最大值]<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; FBWF P20 L32 H64<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; 三个参数都可单独使用，如 FBWF L64 表示强制设置 64M 的 FBWF；FBWF命令必须在 MOUN 命令之后&nbsp;&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; 这样就可以设置X盘的大小了,把修改后的ISO保存,再用CAB压缩就OK.&nbsp;&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; IMG核心中X盘大小调整方案<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 一.FAT IMG X盘调整方案</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 1.类似ISO一样调整FBWF(不过FBWF+IMG+卡巴=蓝屏,并且FBWF不太稳定),方法是先用WINRAR解压后缀为IM_的文件,把里面的IMG后缀的文件解压出来,然后用VDM加载,同样找到WXPE(这个文件夹名能会有点变化,不同的PE可能不同)\SYSTEM32\PECMD.INI,调整好后,卸载镜象.再用CAB压缩.<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; 2.直接建立所需要大小的IMG(即X盘需要70M就建立70M大的IMG,并关闭FBWF)</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 假设我的PE的系统文件为60M,那么我要建立一个70M的IMG,则先打开VDM,建立一个70M的IMG,然后加载IMG-----格式化为FAT格式---把PE的文件都复制进去---卸载IMG-----在如上图最右边的压缩按钮。<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; 这里还要再提一下，表面上PE的系统文件为60M，PE核心大小为70M，那么就多了10M空间，但启动后，X盘的剩余空间会比10M要大一些，这是因为启动后会删除一些启动后就没用的文件，例如SRS驱动等。<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 二.NTFS IMG X盘调整方案<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; 1.用FBWF（方法和FAT IMG一样，但也会蓝屏）</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 2．建立所需大小的IMG（和FAT IMG有所不同，请注意），因为是NTFS格式的关系，所以我们可以起用NTFS压缩来自动压缩核心中的文件，例如，60M的文件，经过NTFS压缩后就变成了48M。那么我们建立核心只要52M就可以放下原来是60M的文件。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 过程是这样的：建立一个50M的IMG-----格式化为NTFS格式-----启用NTFS压缩，接下来到了关键的一步，就是复制文件，这里和FAT IMG的复制不同，FAT IMG是一次全部复制过去就可以了，但NTFS IMG不可以。<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; 首先把SYSTEM32目录以外的目录先复制过去，SYSTEM32目录里的文件要几个一批慢慢复制，遇到体积较大的文件如SHELL32.DLL，一次复制一个，假如遇到提示磁盘空间不足，则卸载IMG，重新再挂载再继续复制，直到所有文件都复制完毕。复制完成后就可以卸载IMG了，然后把后缀名改为IM_，这里不要用CAB压缩，具体原因看下面PE启动内存的计算。<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; PE启动内存计算</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; PE的启动内存和核心有关，大概为下面这个公式（只是大概）&nbsp;&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; 1． 用CAB压缩过的核心</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; X*2+16（单位MB）（X为未压缩时的核心大小）</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 2． 不用CAB压缩的核心</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; X+32（单位MB）（X为未压缩时的核心大小）</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 这里就可以解释为什么NTFS IMG的核心一般不用CAB压缩，因为NTFSIMG格式的核心用CAB压缩效果很差，压缩率低，例如：50M的NTFS IMG用CAB压缩后才35M，而70M（里面有60M的文件）的FATIMG用CAB压缩后，体积变成了26-29M左右。所以NTFS IMG不用CAB压缩，体积减小不多，而启动内存要加倍，因小失大<br style="margin: 0px; padding: 0px;" />
+	关于安装配置文件txtsetup.sif的简单说明&nbsp;&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 相信玩过精简版系统的朋友都知道这个文件的用途，同样PE里也有这个文件，这也是为什么我在文章一开始把PE比喻成类似未安装的系统，废话不多说，我就简单讲讲这个文件。<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; [WinntDirectories]<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; 这个字段是用代码表示文件拷贝的目标文件夹，其根目录为%WinDir%即安装指定的Windows文件夹。<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; [SourceDiskFiles]<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; 根据前面设定的代码表示文件拷贝的具体细节。<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; 下面三段为集成SATA SCSI等驱动时所用<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; [HardwareIdsDatebase]&mdash;硬件标识<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; [SCSI.load]&mdash;&mdash;SCSI驱动加载<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; [SCSI]&mdash;&mdash;SCSI设备说明<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 添加srs驱动实例</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; ◇在PE中添加sata,raid驱动的方法：（这里以Intel Matrix Storage Manager driver为例，以便于说明，以下描述的驱动文件名只基于本实例，实际操作中的具体的文件名称以需要添加的具体驱动为准）</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 一. 准备材料：1.原版驱动文件</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 2.从PE中提取的txtsetup.sif文件<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; 二. 从PE中提取txtsetup.sif文件：</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 先将PE中的winpe.is_重命名为winpe.cab，然后用RAR解压出winpe.iso</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 用UltraISO打开它，将txtsetup.sif提取出来，并用记事本打开备用。<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; 三. 修改txtsetup.sif文件</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 1. 打开驱动包，里面有一个扩展名为&ldquo;.inf&rdquo;或&ldquo;.oem&rdquo;的小文件，如&ldquo;oemsetup.inf&rdquo;或者&ldquo;txtsetup.oem&rdquo;等(本例中为&ldquo;txtsetup.oem&rdquo;)，用记事本打开备用；</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 2. 在txtsetup.sif中查找[SourceDisksFiles]字段，在其下添加iaStor.sys=1,,,,,,4_,4,1,,,1,4</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 3. 查找[SCSI.Load]字段，在其下添加iaStor=iaStor.sys,4</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 4.切换到刚才打开的txtsetup.oem，查找HardwareIds关键字，将该字段下的代码全部拷贝到txtsetup.sif文件的[HardwareIdsDatabase]字段末尾，但需要更改一下代码的格式，比如将id =&quot;PCI\VEN_8086&amp;DEV_27C3&amp;CC_0104&quot;,&quot;iaStor&quot;改为PCI\VEN_8086&amp;DEV_27C3&amp;CC_0104＝iaStor</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 5. 查找[SCSI]字段，在其下添加iaStor=&quot;Intel(R) 82801FBM SATA AHCI Controller (Mobile ICH6M)&quot;</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 至此，修改txtsetup.sif文件部分完成，将修改后的sif文件替换原来的文件。<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; 四. 复制驱动文件</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 将驱动文件iaStor.sys用makecab.exe压缩成iaStor.sy_并添加到PE的system32\DRIVERS目录下，然后将修改后的winpe.iso用makecab.exe重新压缩成winpe.is_替换原来的文件。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 至此整个添加驱动工作完成，重启动以测试成功与否。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp; 关于更详细的txtsetup.sif的用法，可以到精简区搜索，那里有不少教程，我这里就不多说了。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp; 关于修改PE的注册表</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp; 要DIY核心，修改注册表是肯定要会的，先找到SYSTEM32目录下的setupreg.hi_，用WINRAR打开把里面的setupreg.hiv解压出来。打开开始菜单---运行----输入regedit,用鼠标选中HKEY_LOCAL_MACHINE项，然后单击文件---加载外部配置文件<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; 然后找到刚刚的那个setupreg.hiv加载，然后提示项名称，这里随便填，我填&quot;！&quot;方便区分。<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp; 之后，你就可以修改！项里的注册表了，！项里的就是PE的注册表，修改完了后不要忘记卸载配置单元，选中！项，按文件&mdash;卸载配置单元。最后用CAB把修改好的setupreg.hiv文件压缩再替换原文件即可。<br style="margin: 0px; padding: 0px;" />
+	&nbsp;这一步主要是指修改ＷinPE 的注册表，可以直接修改ＷinPE注册表，也可以修改配置文件。<br style="margin: 0px; padding: 0px;" />
+	&nbsp; 1、修改内部注册表的方法：<br style="margin: 0px; padding: 0px;" />
+	&nbsp; 用前面修改 PECMD.INI 的方法将内部注册表的文件提取出来：<br style="margin: 0px; padding: 0px;" />
+	&nbsp; \WXPE\SYSTEM32\CONFIG\*.*<br style="margin: 0px; padding: 0px;" />
+	&nbsp; \WXPE\SYSTEM32\SETUPREG.HI_ (这是CAB压缩包，将它解开成 SETUPREG.HIV)<br style="margin: 0px; padding: 0px;" />
+	&nbsp; 运行注册表编辑器 REGEDIT.EXE，鼠标点击 HKEY_LOCAL_MACHINE，然后点&ldquo;文件&rdquo;－&ldquo;加载配置单元&rdquo;，打开提取出来的注册表文件(需要改哪个就加载哪个)，提示挂载名时随便输入取一个名字如&ldquo;WinPE&rdquo;，展开 HKEY_LOCAL_MACHINE 后里面就有一项 WinPE，然后就跟普通的注册表操作一样了，改好后用鼠标点一下 &ldquo;WinPE&rdquo;项目，然后&ldquo;文件&rdquo;－&ldquo;卸载配置单元&rdquo;，这个文件就改好了。用改过的注册表文件替换原来的。<br style="margin: 0px; padding: 0px;" />
+	&nbsp; 2、修改配置文件的方法：<br style="margin: 0px; padding: 0px;" />
+	&nbsp; 对于普通的不依赖于外置程序目录结构的注册表项目，可以用常规方法将修改项写成 REG 文件(可以直接从 XP 系统中导出，然后在其基础上修)。在外置程序目录下有个 RegDoc.cmd，这个文件是毛桃用来注册外置程序文档关联的(就是改注册表)，可以用记事本打开它，加入一行:<br style="margin: 0px; padding: 0px;" />
+	&nbsp; REGEDIT /s REG文件名<br style="margin: 0px; padding: 0px;" />
+	&nbsp; 则 ＷinPE 加载外部配置时它会自动导入。<br style="margin: 0px; padding: 0px;" />
+	&nbsp; 这是最简单的改注册表的方法。但是如果要改的项依赖于外置程序的目录结构(比如要在右键菜单中添加用 UltraEdit32 打开)，就不能用上面的方法了，因为外置程序的绝对路径是不确定的(不同的机器中盘符不能确定)。这种情况就需要用原始的 REG 命令来做了(就跟好用在REGDOC.CMD 中的做法一样)，这个命令的语法比较艰懂，且注册表键值的表示方法跟 REG 文件不同。在命令提示符下通过 /? 参数可以获得它的用法(中文的哦)，提醒一下 /? 参数是个以多层使用的，如 REG /? 得到的是基本参数的说明，如用 REG ADD /? 则可得到 ADD 这个参数的用法&hellip;&hellip;，有了这个命令的基础后，我们来看看是怎么解决不定路径问题的。在 REGDOC.CMD 中有一个环境变量 %TP%，代表的是 REGDOC.CMD 这个文件所在的路径。我们可以通过 %TP%\..\ 表示它的上层目录，%TP%\..\..\ 表示它的上两层目录。用此方法可以索引到外置程序目录内的所有路径，而不用考虑外置程序目录本身的绝对路径。还有个方法就是在 WinPE.INI 中用 PECMD 的 REGI 命令一行行添加，这个比系统的 REG 命令好理解些，同样可以用 %CurDir% 环境变量来索引外置程序目录内的所有路径.直接修改的好处是启动ＷinPE 就是所需要设置，不依赖外部配置文件，ＷinPE 的加载速度也比较快，但麻烦。修改配置文件则比较简单，但要依赖配置文件加载过程(直到加载到那些语句时才会生效)，启动时需要额外的时间加载，相当于给系统打补丁去修改默认设置。<br style="margin: 0px; padding: 0px;" />
+	&nbsp; 一般情况下不推荐直接修改ＷinPE注册表，麻烦，重新打包也比较花时间。但有些跟系统紧密的键必须直接修改才有效，比如屏幕分辨率，虽然在外面也可以修改有，但在登录时加载到它之前是无效的，那么在登录的过程中屏幕就会因切换分辨率而闪烁。<br style="margin: 0px; padding: 0px;" />
+	&nbsp; 自己修改注册表的前提是自己要知道所希望的改变要修注册表中的哪些键值。可以上网搜索，现在网上的这些资源多得是，实在找不到的话可以还可以用 RegMon 之类的注册表监视软件来定位。比如修改记事本的自动换行，又不知道相应的键值在哪。可以先开启 RegMon，然后在记事本中改变换行的选项，看 RegMon 的监视结果，来定位是哪个键值。因为系统本身也在不断的更改注册表，RegMon 中的显示会很多，但是通过不断的改变记事本中的设置，最终是可以找到的，这个过程需要的是耐心和细心。<br style="margin: 0px; padding: 0px;" />
+	WinPE核心DIY修改教程（三）<br style="margin: 0px; padding: 0px;" />
+	修改WinPE的OEM信息</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp; 1.提取文件</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 从WinPE镜像光盘中提取WinPE.IS_并解压，得到WinPE.ISO，提取其中需要的文件</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp; 2.修改</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 修改OEM文字信息请编辑OEMINFO.INI (用记事本编辑即可)，修改OEM图标请用作图工具编辑</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp; 3.替换文件&amp;压包</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 用UltraISO把修改好的文件替换到WinPE.ISO中对应的位置,再把WinPE.ISO用makecab压为WinPE.IS_文件,最后用UltraISO把刚压缩得到的WinPE.IS_替换到原始WinPE光盘(镜像)中生成新的WinPE光盘(镜像)<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 备注：有的修改 OEM 信息是修改 Winpe.ini 文件。<br style="margin: 0px; padding: 0px;" />
+	一、删除桌面上的&ldquo;命令提示符&rdquo;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 修改注册表,删除以下键值</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&quot;@shell32.dll,-22022&quot;=hex(2):25,00,63,00,6f,00,6d,00,73,00,70,00,65,00,63,00,\<br style="margin: 0px; padding: 0px;" />
+	25,00,00,00<br style="margin: 0px; padding: 0px;" />
+	或者：</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp; 二、删除桌面上的&ldquo;我的文档&rdquo;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 修改注册表,删除以下键值</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&quot;{450D8FBA-AD25-11D0-98A8-0800361B1103}&quot;=dword:00000001<br style="margin: 0px; padding: 0px;" />
+	[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel]<br style="margin: 0px; padding: 0px;" />
+	&quot;{450D8FBA-AD25-11D0-98A8-0800361B1103}&quot;=dword:00000001<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 三、删除右键菜单中的&ldquo;管理&rdquo;</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp; 红色部分为注册表加载项的名称</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp; 四、修改文件夹视图方式<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; ;平铺查看<br style="margin: 0px; padding: 0px;" />
+	&quot;Settings&quot;=hex:08,00,00,00,06,00,00,00,01,00,00,00,e5,25,f1,65,e1,7b,10,48,ba,9d,d2,71,c8,43,\2c,e3,04,00,00,00,1a,00,00,00,43,00,00,00<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; ;缩略图查看<br style="margin: 0px; padding: 0px;" />
+	&quot;Settings&quot;=hex:08,00,00,00,05,00,00,00,01,00,00,00,90,b2,eb,8b,d0,52,d0,11,b7,f4,00,c0,4f,d7,\06,ec,04,00,00,00,07,00,00,00,43,00,00,00<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; ; 列表查看<br style="margin: 0px; padding: 0px;" />
+	&quot;Settings&quot;=hex:09,00,00,00,03,00,00,00,00,00,00,00,e0,a5,1f,0e,73,35,cf,11,ae,69,08,00,2b,2e,\12,62,04,00,00,00,01,00,00,00,43,00,00,00<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; ; 详细信息查看<br style="margin: 0px; padding: 0px;" />
+	&quot;Settings&quot;=hex:08,00,00,00,04,00,00,00,01,00,00,00,00,77,7e,13,73,35,cf,11,ae,69,08,00,2b,2e,\12,62,04,00,00,00,01,00,00,00,43,00,00,00<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; ; 图标查看<br style="margin: 0px; padding: 0px;" />
+	&quot;Settings&quot;=hex:08,00,00,00,01,00,00,00,01,00,00,00,e0,d0,57,00,73,35,cf,11,ae,69,08,00,2b,2e,\12,62,04,00,00,00,20,00,00,00,43,00,00,00<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 五、修改虚拟驱动器X盘的大小<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 先把WinPE.IS_解压成WinPE .ISO，然后修改WXPE\SYSTEM32里的PECMD.INI的相关参数</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	FBWF P40 L32 H96<br style="margin: 0px; padding: 0px;" />
+	TEAM ENVI S=%SystemRoot%|ENVI SS=%S%\SYSTEM32|ENVI SSD=%SS%\Drivers<br style="margin: 0px; padding: 0px;" />
+	TEAM FILE %S%\TXTSETUP.SI*|FILE %SS%\NTOSKRNL.EX*|FILE %SS%\WIN32K.SYS|FILE %SS%\CONFIG|FILE %SS%\*.*_|FILE %SSD%\*.SY_<br style="margin: 0px; padding: 0px;" />
+	TEAM LOGS %S%\PECMD.LOG|MDIR %SystemDrive%\TEMP|ENVI|INIT|EXEC @PECMD.EXE CALL $SHELL32.DLL,DllInstall,#1,U<br style="margin: 0px; padding: 0px;" />
+	.........................<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; P代表可用内存的40%<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; L代表最低设置为32MB<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; H代表最高设置为96MB<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 最高设置可以不超过256MB<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 当然有P40 这个参数在，H 设置成512也没事，也不会出现内存用光的情况</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp; 六、在WinPE中如何多建立一个Ramdisk盘</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 解开winpe.is_,得到winpe.iso,然后提取setupreg.hiv,用注册表编辑器加载到HKEY_LOCAL_MACHINE下,取名为!system，然后导入下面这个reg</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	[HKEY_LOCAL_MACHINE\!system]<br style="margin: 0px; padding: 0px;" />
+	[HKEY_LOCAL_MACHINE\!system\ControlSet001]<br style="margin: 0px; padding: 0px;" />
+	[HKEY_LOCAL_MACHINE\!system\ControlSet001\Enum]<br style="margin: 0px; padding: 0px;" />
+	[HKEY_LOCAL_MACHINE\!system\ControlSet001\Enum\Root]<br style="margin: 0px; padding: 0px;" />
+	[HKEY_LOCAL_MACHINE\!system\ControlSet001\Enum\Root\UNKNOWN]<br style="margin: 0px; padding: 0px;" />
+	[HKEY_LOCAL_MACHINE\!system\ControlSet001\Enum\Root\UNKNOWN\9999]<br style="margin: 0px; padding: 0px;" />
+	&quot;ClassGUID&quot;=&quot;{FFA1C341-4539-11D3-B88D-00C04FAD5172}&quot;<br style="margin: 0px; padding: 0px;" />
+	&quot;Class&quot;=&quot;RamDisk&quot;<br style="margin: 0px; padding: 0px;" />
+	&quot;ConfigFlags&quot;=dword:00000004<br style="margin: 0px; padding: 0px;" />
+	&quot;Mfg&quot;=&quot;Nu2 Productions&quot;<br style="margin: 0px; padding: 0px;" />
+	&quot;HardwareID&quot;=hex(7):72,00,61,00,6d,00,64,00,72,00,69,00,76,00,00,00,00,00<br style="margin: 0px; padding: 0px;" />
+	&quot;Service&quot;=&quot;Ramdriv&quot;<br style="margin: 0px; padding: 0px;" />
+	&quot;DeviceDesc&quot;=&quot;Ramdisk&quot;<br style="margin: 0px; padding: 0px;" />
+	&quot;Capabilities&quot;=dword:00000000<br style="margin: 0px; padding: 0px;" />
+	&quot;Driver&quot;=&quot;{FFA1C341-4539-11D3-B88D-00C04FAD5172}\\0001&quot;<br style="margin: 0px; padding: 0px;" />
+	[HKEY_LOCAL_MACHINE\!system\ControlSet001\Enum\Root\UNKNOWN\9999\Control]<br style="margin: 0px; padding: 0px;" />
+	&quot;DisableCount&quot;=dword:00000000<br style="margin: 0px; padding: 0px;" />
+	&quot;ActiveService&quot;=&quot;Ramdriv&quot;<br style="margin: 0px; padding: 0px;" />
+	&quot;FilteredConfigVector&quot;=hex(7):30,00,30,00,00,00,30,00,30,00,00,00,30,00,30,00,\<br style="margin: 0px; padding: 0px;" />
+	00,00,30,00,30,00,00,00,30,00,30,00,00,00,30,00,30,00,00,00,30,00,30,00,00,\<br style="margin: 0px; padding: 0px;" />
+	00,30,00,30,00,00,00,30,00,30,00,00,00,30,00,30,00,00,00,30,00,30,00,00,00,\<br style="margin: 0px; padding: 0px;" />
+	30,00,30,00,00,00,00,00<br style="margin: 0px; padding: 0px;" />
+	[HKEY_LOCAL_MACHINE\!system\ControlSet001\Services]<br style="margin: 0px; padding: 0px;" />
+	[HKEY_LOCAL_MACHINE\!system\ControlSet001\Services\Ramdriv]<br style="margin: 0px; padding: 0px;" />
+	&quot;Type&quot;=dword:00000001<br style="margin: 0px; padding: 0px;" />
+	&quot;Start&quot;=dword:00000003<br style="margin: 0px; padding: 0px;" />
+	&quot;ErrorControl&quot;=dword:00000001<br style="margin: 0px; padding: 0px;" />
+	&quot;DisplayName&quot;=&quot;Ramdisk&quot;<br style="margin: 0px; padding: 0px;" />
+	&quot;ImagePath&quot;=&quot;system32\\drivers\\ramdriv.sys&quot;<br style="margin: 0px; padding: 0px;" />
+	[HKEY_LOCAL_MACHINE\!system\ControlSet001\Services\Ramdriv\Enum]<br style="margin: 0px; padding: 0px;" />
+	&quot;0&quot;=&quot;Root\\UNKNOWN\\9999&quot;<br style="margin: 0px; padding: 0px;" />
+	&quot;Count&quot;=dword:00000001<br style="margin: 0px; padding: 0px;" />
+	&quot;NextInstance&quot;=dword:00000001<br style="margin: 0px; padding: 0px;" />
+	[HKEY_LOCAL_MACHINE\!system\ControlSet001\Services\Ramdriv\Parameters]<br style="margin: 0px; padding: 0px;" />
+	&quot;BreakOnEntry&quot;=dword:00000000<br style="margin: 0px; padding: 0px;" />
+	&quot;DebugLevel&quot;=dword:00000005<br style="margin: 0px; padding: 0px;" />
+	&quot;DebugComp&quot;=dword:ffffffff<br style="margin: 0px; padding: 0px;" />
+	&quot;DiskSize&quot;=dword:00100000<br style="margin: 0px; padding: 0px;" />
+	&quot;DriveLetter&quot;=&quot;B:&quot;<br style="margin: 0px; padding: 0px;" />
+	&quot;RootDirEntries&quot;=dword:00000200<br style="margin: 0px; padding: 0px;" />
+	&quot;SectorsPerCluster&quot;=dword:00000002<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 其中DiskSize是内存盘的大小，DriveLetter是内存盘盘符</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	32 m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x02000000<br style="margin: 0px; padding: 0px;" />
+	64 m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x04000000<br style="margin: 0px; padding: 0px;" />
+	96 m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x06000000<br style="margin: 0px; padding: 0px;" />
+	128 m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x08000000<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 最后把修改好的setupreg.hiv卸载并放回winpe.iso中，system32\drivers还要加入Ramdriv.sys。</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 另外可以把Ramdriv.sys 改名，并修改相关的注册表就可再建其它Ramdisk盘<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 七、WinPE个性化<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 用记事本打开&ldquo;外置程序&rdquo;&mdash;&mdash;&ldquo;pe_outerpart&rdquo;&mdash;&mdash;start_sound.md的文件</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp; 在最后加上一句:</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	//添加WinPE桌面上的音量调节快捷方式<br style="margin: 0px; padding: 0px;" />
+	PECMD.EXE LINK !%USERPROFILE%\桌面\调节音量,%systemroot%\system32\sndvol32.exe<br style="margin: 0px; padding: 0px;" />
+	//删除WinPE桌面上的启动网络支持快捷方式<br style="margin: 0px; padding: 0px;" />
+	PECMD.EXE FILE %USERPROFILE%\桌面\启用网络支持.lnk</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp; 八、在Grub菜单中空一行<br style="margin: 0px; padding: 0px;" />
+	menu.lst菜单文件中红色部分就是留空的哪一行<br style="margin: 0px; padding: 0px;" />
+	timeout 30<br style="margin: 0px; padding: 0px;" />
+	default 4</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	find --set-root /minipe/boot/sanic.ico<br style="margin: 0px; padding: 0px;" />
+	fontfile /minipe/boot/fonts.gz<br style="margin: 0px; padding: 0px;" />
+	splashimage /minipe/boot/back.gz<br style="margin: 0px; padding: 0px;" />
+	title &amp;yuml;&nbsp;&nbsp;<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 至于这个&amp;yuml;，可以先按下ALT，再用小键盘输入255，即可<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 九、定制WinPE启动时显示中文进度条</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1、用UE打开Setupldr.bin查找bootfont修改所有bootfont.bak为bootfont.bin<br style="margin: 0px; padding: 0px;" />
+	（中文支持字体文件，在WinXP系统的根目录下可以找到。或者直接找到bootfont.bin文件，修改为bootfont.bak）</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2、在偏移45358h处找到00 DB 00修改DB为3E(可以选择自己喜欢的半角符号的16进制码) 或16进制查找00 DB 00修改</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3、修改你认为有必要修改的英文提示字符串为中文(注意合适的字节数)，最好也把TXTSETUP.SIF里的那句也改成中文</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4、将bootfont.bin放在WinPE 的根目录下</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5、将修改后的Setupldr.bin替换原来的Setupldr.bin<br style="margin: 0px; padding: 0px;" />
+	十、定制WinPE系统中系统属性</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在外置程序目录下的加载外置程序那个批处理中添加代码如下：</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	reg add &quot;HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot; /v RegisteredOrganization /t reg_sz /d 逸天网络 /f &gt;nul<br style="margin: 0px; padding: 0px;" />
+	reg delete &quot;HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot; /v ProductId /f &gt;nul 2&gt;nul<br style="margin: 0px; padding: 0px;" />
+	del /a /f /q %systemroot%\system32\oeminfo.ini &gt;nul 2&gt;nul<br style="margin: 0px; padding: 0px;" />
+	del /a /f /q %systemroot%\system32\oemlogo.bmp &gt;nul 2&gt;nul<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 以上的&ldquo;网络种猪&rdquo;是注册的用户名，&ldquo;逸天网络&rdquo;是注册的单位名，你想修改成什么就是什么。但要注意的是文字中间不能有空格，如果要隔开可以用智能ABC的v1的代替，否则修改不了原来的信息。<br style="margin: 0px; padding: 0px;" />
+	&nbsp;&nbsp;&nbsp; 十一、修改WinPE启动画面</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1、首先需要一个工具软件ResHacker</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2、找到ntoskrnl.exe文件。复制两份，一份作为备份，一份用来编辑</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3、用ResHacker打开用来编辑的ntoskrnl.exe文件，找到第一项：Bitmap\1\2052，然后选择菜单保存为1.bmp。用同样方法把第八项（Bitmap\8\2052）也保存为8.bmp</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4、用Photoshop打开1.bmp文件，这时候图片是全黑的。接着选图像--&gt;模式--&gt;颜色表，载入16.act文件，OK，现在应该可以看到图像了</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5、分别编辑完毕以后，再选图像--&gt;模式--&gt;颜色表，载入win.pal，这时候图片应该再次变黑，保存</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6、在ResHacker中用编辑好的1.bmp和8.bmp文件分别替换ntoskrnl.exe中的相应文件。打开ResHacker&ldquo;操作&rdquo;菜单，找到&ldquo;替换位图&rdquo;，在&ldquo;打开新位图文件&rdquo;找到刚才编辑好保存的1.bmp文件，选择&ldquo;打开&rdquo;--&gt;&ldquo;替换&rdquo;，最后保存ntoskrnl.exe文件</p>
+<p style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 注意:开机画面只支持16色、如果想换图片找些16色的图片来做吧、还有替换前要先备份好系统、以免出错<br style="margin: 0px; padding: 0px;" />
+	&nbsp; &nbsp;</p>
+
+</div>
+<div class="context"><div style="width:290px;height:30px;float:left;">上一篇：<a href='/changjianwentijieda/20131212/32.html'>迷你笔记本使用U盘安装系统教程</a>  </div><div style="width:290px;height:30px;float:right;">下一篇：<a href='/changjianwentijieda/20131212/34.html'>用U盘转移图片却被破坏了，怎样修复？</a> </div></div>
+</div>                    
+                    
+</div>
+
+<!--右侧-->
+<div class="downright">
+  <div class="newdown">
+<div class="newdowntop">
+<img src="/uploads/load.jpg"/>
+<div class="newdowninfo"><a href="/down/2013/1212/49.html">下载最新版本</a><br/>版本：V6.9<br/>更新：2013-12-12</div>
+</div>
+<div class="newdownfoot">
+<a href="/down/2013/1212/49.html">
+
+<img src="/uploads/down.jpg" border="0"></a></div>
+</div>
+
+
+
+<div class="helptj">
+<div class="tjtitle"><h4>推荐下载<h4></div>
+<div class="tjlst">
+<ul>
+
+  <li><a href="/down/2013/1212/49.html">好用官网U盘装系统V6.9(2003,win8内核)</a></li>
+<li><a href="/down/2013/1212/48.html">好用官网U盘装系统V6.8(2003,win8内核)全</a></li>
+<li><a href="/down/2013/1212/47.html">好用官网U盘装系统V6.7(2003,win8内核)</a></li>
+<li><a href="/down/2013/1212/46.html">好用U盘启动盘制作工具V6.5(2003,win8内</a></li>
+<li><a href="/down/2013/1212/45.html">好用U盘启动盘制作工具V6.3 (xp,2003,w</a></li>
+
+</ul>
+</div>
+</div>
+
+
+
+<div class="helptj">
+<div class="tjtitle"><h4>热门下载</h4></div>
+<div class="tjlst">
+<ul>
+
+  <li><a href="/down/2013/1212/45.html">好用U盘启动盘制作工具V6.3 (xp,2003,w</a></li>
+<li><a href="/down/2013/1212/47.html">好用官网U盘装系统V6.7(2003,win8内核)</a></li>
+<li><a href="/down/2013/1212/44.html">好用U盘启动盘制作工具V5.1 (xp,2003,w</a></li>
+<li><a href="/down/2013/1212/46.html">好用U盘启动盘制作工具V6.5(2003,win8内</a></li>
+<li><a href="/down/2013/1212/48.html">好用官网U盘装系统V6.8(2003,win8内核)全</a></li>
+
+
+
+
+</ul>
+</div>
+</div>
+
+
+
+
+<div class="helptj">
+<div class="tjtitle"><h4>帮助中心</h4></div>
+<div class="tjlst">
+<ul>
+
+  <li><a href="/help/2013/1212/17.html">安全模式，局域网拓朴结</a></li>
+<li><a href="/help/2013/1212/16.html">U盘装系统，电脑病毒之四</a></li>
+<li><a href="/help/2013/1212/15.html">安全模式，破解计算机密</a></li>
+<li><a href="/help/2013/1212/14.html">U盘装系统，通过Skydrive转</a></li>
+<li><a href="/help/2013/1212/13.html">安全模式，提高搜索速度</a></li>
+
+
+</ul>
+</div>
+</div>
+
+<!--
+<div class="other">
+<div class="bbs"><a href="#"><img src="/templets/default/public/bbs.gif" border="0"/></a></div>
+</div>
+-->
+</div>
+
+<!--右侧END-->
+
+
+</div>
+
+
+<div id="innerfoot"></div>
+
+
+<div id="footer">
+<div class="footall">
+<div class="copyright">
+    <p>Copyright (C) 2012 <a href="/" target=_blank>好用u盘启动盘制作工具</a> <a href=/data/rssmap.html target=_blank>网站地图</a> Allright Reserved. <a href=http://www.dedecms.com target='_blank'>Power by DedeCms</a><br/>
+蜀ICP备xxxxxxxx号   站长e-mail:123456@qq.conm&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+</div>
+</div>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;uid=2190889" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->
+
+
+
+
+
+</div>
+
+</body>
+</html>

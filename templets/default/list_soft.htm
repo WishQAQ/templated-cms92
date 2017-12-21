@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="x-ua-compatible" content="ie=7"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description'  function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/public/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+{dede:include filename="head.htm"/}
+
+<div id="innerbody">
+<div class="innerbodyall">
+<div class="downleft">
+<div class="downtitle"><li>{dede:field name='typename' /}</li></div>
+<ul class="down-list">
+
+{dede:list pagesize="8" }
+<li>
+<div class="down-list-btn">
+<a href="[field:arcurl/]">立即下载</a>
+</div>
+<a href="[field:arcurl/]"><img src="/uploads/1-1209161G921D7.png" border="0" alt="<b>[field:title/]</b>"/></a>
+	<h4><a href="[field:arcurl/]"><b><b>[field:title/]</b></b></a></h4>
+<p>发布时间：<strong>[field:pubdate function="GetDateTimeMK(@me)" /]</strong>　软件大小：<strong>[field:softsize /] MB
+</strong></p>
+<span><font color="#009900">软件介绍：</font>[field:description/]<a href="[field:arcurl/]">[详细介绍]</a></span>
+</li>
+{/dede:list}
+
+</ul>
+<div class="fenye">
+<ul class="pagelist">
+{dede:pagelist istitem="index,pre,next,end,option,info" listsize='5' /}
+</ul>
+</div>
+
+</div>
+
+<!--右侧-->
+{dede:include filename="right.htm"/}
+
+<!--右侧END-->
+</div>
+
+
+<div id="innerfoot"></div>
+
+
+{dede:include filename="footer.htm"/}
+
+</div>
+
+</body>
+</html>

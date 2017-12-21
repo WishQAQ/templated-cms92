@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="x-ua-compatible" content="ie=7"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>怎么样用U盘装Win7系统_U盘装系统_好用官网_视频教程_好用u盘启动盘制作工具</title>
+<meta name="keywords" content="怎么样,用,盘装,Win7,系统,很多,笔记本,特别是," />
+<meta name="description" content="很多笔记本(特别是上网本)都不带光驱了，因此装系统只能靠U盘或者移动硬盘。随着u盘价格越来越便宜及它的普及,用U盘来装系统已经成为最新的重装系统方案,因此本文今天手把手教大" />
+<link href="/templets/default/public/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="header">
+<div class="headall">
+<div class="toplogo"><a href="/"><img src="/templets/default/images/logo.png" ></a></div>
+
+<div class="toptext"><p>好用u盘装系统，最干净的u盘装系统软件。</p></div>
+<div class="nav">
+<ul>
+
+<li><a href="/" >首  页</a></li>
+ 
+<li><a href='/tutorial/'>使用教程</a></li>
+      	<li class='current'><a href='/article/' >文章中心</a></li>
+<li><a href='/down/'>下载中心</a></li>
+      	
+<li><a href='/help/'>帮助中心</a></li>
+      	
+
+</ul>
+</div>
+</div>
+</div>
+
+<div id="innerbody">
+<div class="innerbodyall">
+<div class="downleft">
+<div class="downtitle"><li>WINPE</li></div>
+<div class="help-view">
+<h4>怎么样用U盘装Win7系统</h4>
+<p>作者：admin
+--------------  文章来源：未知 发布时间：2013-12-12 13:38点击：<script src="/plus/count.php?view=yes&aid=41&mid=1"type='text/javascript' language="javascrip" ></script>次 </p>
+</div>
+<div class="down-intro">
+
+<div class="content">
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">很多笔记本(特别是上网本)都不带光驱了，因此装系统只能靠U盘或者移动硬盘。随着u盘价格越来越便宜及它的普及,用U盘来装系统已经成为最新的重装系统方案,因此本文今天手把手教大家如何使用U盘装Win7系统，好好学习哦,学到了就是你的。</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　用USB闪盘驱动安装win7的技巧之所以让人感觉很酷，主要出于两个原因：一是闪盘驱动比光驱反应更快，因为它不依赖于移动组件，因此安装过程会更快。其次，它为那些不具备DVD驱动的系统提供了更为简便的Win7安装方式。下面向大家展示如何使用DiskPart工具来配置可启动式USB闪盘驱动，以便大家使用USB闪盘驱动安装微软Win7操作系统。</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　当然，首先我们要准备一个内存空间足够装下Win7DVD的USB闪盘驱动。Win7 RC DVD约为2.5G，可以预料RTM DVD所占空间至少在这之上。我们的测试系统中选择了4G容量的闪盘驱动。</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　记住，我们所使用的进程是完全将闪盘驱动重新格式化。因此我们要确定是否已经备份闪盘中的原有数据。</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　我们希望通过闪盘驱动安装Win7的系统必须被配置为从USB驱动处引导。大多数新系统都具备从USB驱动处引导的 ，这项操作通常可以在BIOS中完成配置，或者也可以在独立引导过程中按确认键完成。对此，我们要检查指定硬件进行确认。</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　使用DiskPart工具</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　或许你已经知道，DiskPart工具是Disk嵌入式管理单元的命令行形式，其作用是让我们管理磁盘，分区或者脚本，命令提示符的多少。我们可以使用Vista或Win7中的DiskPart命令将闪盘驱动配置为可启动式设备。(记住XP中的DiskPart命令不能创建可启动式闪盘驱动。)</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　首先，将闪盘驱动连接到电脑上，这里我们使用的是Vista系统。</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　然后，在开始菜单中定位命令提示符的快捷方式，右键单击其图标，选择作为管理员命令运行。再对UAC作出恰当回应。现在可以在命令行上输入DiskPart发布DiskPart工具。之后我们便会看到DISKPART提示符。</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　也就是说，我们已经位于DiskPart环境中，下面需要用List Disk命令定位USB闪盘驱动。List Disk命令已经识别了USB闪盘驱动，并将其作命名为Disk 5。我们可以通过检查磁盘空间大小来确定USB闪盘驱动是否就是Disk 5。</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　一旦系统识别了闪盘驱动的驱动号码，我们就要为磁盘上的DiskPart环境设置焦点。在本文的示例中，USB闪盘驱动是Disk 5，因此我们会使用命令来选择Disk 5。</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　现在USB闪盘驱动已经有了焦点，下面要做的是删除所有分区或磁盘格式化信息。我们可以使用Clean命令来完成这一操作。Clean操作应该可以再一瞬间完成。而完成以后，我们可以看到信息：</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　接下来，要使用Create Partition Primary命令在磁盘上创建一个基础分区。在创建完分区后，我们会看到系统发送的成功创建消息，而焦点也会自动转移到新创建的分区上。之后就要使用 Active命令将分区标记为激活。将分区标记为激活有助于让BIOS识别该分区属于有效的可启动式系统分区。</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　创建分区并将分区标记为激活后，就可以准备快速格式化磁盘，并用Format fs=FAT32快捷命令安装FAT32文件系统了。一旦驱动被格式化，就可以使用Assign命令，为驱动指派一个驱动器名。</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　USB闪盘驱动已经准备就绪。现在，我们可以使用Exit命令退出DiskPart环境，然后关闭命令提示符窗口。</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　复制Win7文件</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　复制Win7文件是一件很容易的事情。只需打开Windows资源管理器，打开Win7 DVD，选择所有文件和文件夹，然后将所有文件和文件夹拖到USB闪盘驱动中。记住复制的操作会花费一些时间。</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　从USB闪盘驱动上安装Win7</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">&nbsp;</span><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;" />
+<span style="color: rgb(0, 0, 0); font-family: Simsun; font-size: medium;">　　将win7旗舰版的&nbsp; DVD装载到可启动式USB闪盘驱动中后，就可以马上安装操作系统了。只需从USB驱动中启动系统，安装进程和以往的安装差不多，不过，从闪盘安装，其进程确实会比其他安装要快一些。Win7系统安装文章到此结束，如果大家有不明白的地方，可以留言，笔者再作回答和补充。</span>
+</div>
+<div class="context"><div style="width:290px;height:30px;float:left;">上一篇：<a href='/winpe/20131212/40.html'>WinPE系统U盘启动盘制作的技巧分享</a>  </div><div style="width:290px;height:30px;float:right;">下一篇：<a href='/winpe/20131212/42.html'>延长U盘使用寿命，我们要懂得的</a> </div></div>
+</div>                    
+                    
+</div>
+
+<!--右侧-->
+<div class="downright">
+  <div class="newdown">
+<div class="newdowntop">
+<img src="/uploads/load.jpg"/>
+<div class="newdowninfo"><a href="/down/2013/1212/49.html">下载最新版本</a><br/>版本：V6.9<br/>更新：2013-12-12</div>
+</div>
+<div class="newdownfoot">
+<a href="/down/2013/1212/49.html">
+
+<img src="/uploads/down.jpg" border="0"></a></div>
+</div>
+
+
+
+<div class="helptj">
+<div class="tjtitle"><h4>推荐下载<h4></div>
+<div class="tjlst">
+<ul>
+
+  <li><a href="/down/2013/1212/49.html">好用官网U盘装系统V6.9(2003,win8内核)</a></li>
+<li><a href="/down/2013/1212/48.html">好用官网U盘装系统V6.8(2003,win8内核)全</a></li>
+<li><a href="/down/2013/1212/47.html">好用官网U盘装系统V6.7(2003,win8内核)</a></li>
+<li><a href="/down/2013/1212/46.html">好用U盘启动盘制作工具V6.5(2003,win8内</a></li>
+<li><a href="/down/2013/1212/45.html">好用U盘启动盘制作工具V6.3 (xp,2003,w</a></li>
+
+</ul>
+</div>
+</div>
+
+
+
+<div class="helptj">
+<div class="tjtitle"><h4>热门下载</h4></div>
+<div class="tjlst">
+<ul>
+
+  <li><a href="/down/2013/1212/45.html">好用U盘启动盘制作工具V6.3 (xp,2003,w</a></li>
+<li><a href="/down/2013/1212/47.html">好用官网U盘装系统V6.7(2003,win8内核)</a></li>
+<li><a href="/down/2013/1212/44.html">好用U盘启动盘制作工具V5.1 (xp,2003,w</a></li>
+<li><a href="/down/2013/1212/46.html">好用U盘启动盘制作工具V6.5(2003,win8内</a></li>
+<li><a href="/down/2013/1212/48.html">好用官网U盘装系统V6.8(2003,win8内核)全</a></li>
+
+
+
+
+</ul>
+</div>
+</div>
+
+
+
+
+<div class="helptj">
+<div class="tjtitle"><h4>帮助中心</h4></div>
+<div class="tjlst">
+<ul>
+
+  <li><a href="/help/2013/1212/17.html">安全模式，局域网拓朴结</a></li>
+<li><a href="/help/2013/1212/16.html">U盘装系统，电脑病毒之四</a></li>
+<li><a href="/help/2013/1212/15.html">安全模式，破解计算机密</a></li>
+<li><a href="/help/2013/1212/14.html">U盘装系统，通过Skydrive转</a></li>
+<li><a href="/help/2013/1212/13.html">安全模式，提高搜索速度</a></li>
+
+
+</ul>
+</div>
+</div>
+
+<!--
+<div class="other">
+<div class="bbs"><a href="#"><img src="/templets/default/public/bbs.gif" border="0"/></a></div>
+</div>
+-->
+</div>
+
+<!--右侧END-->
+
+
+</div>
+
+
+<div id="innerfoot"></div>
+
+
+<div id="footer">
+<div class="footall">
+<div class="copyright">
+    <p>Copyright (C) 2012 <a href="/" target=_blank>好用u盘启动盘制作工具</a> <a href=/data/rssmap.html target=_blank>网站地图</a> Allright Reserved. <a href=http://www.dedecms.com target='_blank'>Power by DedeCms</a><br/>
+蜀ICP备xxxxxxxx号   站长e-mail:123456@qq.conm&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+</div>
+</div>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;uid=2190889" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->
+
+
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--
+                       (0 0)
+   +-------------oOO----(_)----------------+
+   |           Powered By 织梦猫           |
+   |            www.dedemao.com            |
+   |        E-mail:admin@dedemao.com       |
+   +--------------------------oOO----------+
+                      |__|__|
+                       || ||
+                      ooO Ooo
+-->
+
+<meta http-equiv="x-ua-compatible" content="ie=7"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<link href="{dede:global.cfg_templets_skin/}/public/main.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+<div class="tip">
+<div class="width">
+<em class="tip-icon"></em><h1>手把手教您U盘装系统，让您立刻成为装系统高手！</h1><a target="_blank" href="/tutorial/" class="tip-btn">视频教程</a><a onclick="this.parentNode.parentNode.style.display='none'" href="javascript:void(0);" class="tip-close">关闭</a>
+</div>
+</div>
+
+
+
+{dede:include filename="head.htm"/}
+
+<div id="banner">
+
+
+
+
+  {dede:arclist addfields='banben,softsize,os' channelid='3' row="1" typeid="3" orderby="pubdate" orderway="desc" }
+<div class="slide">
+
+<div class="soft-detail">
+</strong><br>
+</strong><br>
+<p>经过网友上万次测试，兼容市面上99%的电脑型号，简单绿色，一键完成U盘启动盘制作！</p>
+软件版本：<strong>[field:banben /]</strong><br>
+软件大小：<strong>[field:softsize /] MB</strong><br>
+更新日期：[field:pubdate function=MyDate('Y-m-d',@me)/]<br>
+
+<a target="_blank" href="[field:arcurl /]"><strong>详细介绍>></strong></a></div>
+
+
+<div class="soft-detail" style="top: 235px; left: 700px; width: 130px; height: 30px;">
+
+<p style="color:#ffffff;">已有<script src="[field:phpurl /]/disdls.php?aid=[field:id /]" language="javascript"></script>次下载</p>
+</div>
+
+<div class="soft-btn"><a href="[field:arcurl /]">下载</a></div>
+          {/dede:arclist}
+
+</div>
+
+
+</div>
+
+<div id="main">
+
+<div class="main-top">
+<link href="{dede:global.cfg_templets_skin/}/public/upzxt.css"rel="stylesheet" type="text/css">
+
+
+<div class="product-list">
+                     <div class="t-1">
+			<h2>好用U盘启动盘制作工具软件</h2>
+		</div>
+		<ul class="list clearfix m-b-15">
+			
+
+ {dede:arclist addfields='banben,softsize,os' titlelen="28" channelid='3' row="4" typeid="3" orderby="pubdate" orderway="desc" }
+			<li class="sd">
+				<a href="[field:arcurl /]" class="pic"></a>
+				<div class="cont">
+					<h3><a href="[field:arcurl /]">[field:title /]</a></h3>
+					<p>软件版本：[field:banben /]</p>
+					<p>软件大小：[field:softsize /]</p>
+					<p>更新日期：[field:pubdate function=MyDate('Y年m月d日',@me)/]</p>
+					<p><a style=" color:#000" target="_blank" href="[field:arcurl /]">详细介绍>></a></p>
+				</div>
+			
+			</li>
+			
+			          {/dede:arclist}
+
+
+		</ul>
+		
+		
+
+	</div>
+
+
+<div class="mainhelp">
+<div class="mhtitle">
+<h2>{dede:type typeid='4'}[field:typename/]{/dede:type}</h2>
+
+
+</div>
+<div class="mhlst">
+<ul>
+
+  {dede:arclist row="13" typeid="4" orderby="pubdate" orderway="desc" }
+          <li><a href="[field:arcurl /]">[field:title /]</a></li>
+          {/dede:arclist}
+
+ 
+
+</ul>
+
+</div>
+
+</div>
+
+
+
+
+
+
+<div class="mainfg"></div>
+
+<style>
+
+.box960 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 0 none;
+       margin: 0 auto;
+    overflow: hidden;
+    width: 1000px;
+
+}
+
+</style>
+
+<div class="mainfg"></div>
+
+<link href="{dede:global.cfg_templets_skin/}/public/news.css" rel="stylesheet" type="text/css" />
+
+<div class="part_bottom">
+        <div class="listbox">
+		<h2><span class="more">{dede:type typeid='2'}<a href="[field:typelink/]">更多...</a></span><a href="[field:typelink/]">[field:typename/]</a>{/dede:type}</h2>
+            <ul>
+            {dede:arclist row="8" typeid="2" orderby="pubdate" orderway="desc" }
+          <li><span class="date">[field:pubdate function=MyDate('m-d',@me)/]</span><span class="title"><a href="[field:arcurl /]" target="_blank" title="[field:title /]">[field:title /]</a></span></li>
+          {/dede:arclist}
+            </ul>
+        </div>
+        <div class="listbox box2">
+		<h2><span class="more">{dede:type typeid='5'}<a href="[field:typelink/]">更多...</a></span><a href="[field:typelink/]">[field:typename/]</a>{/dede:type}</h2>
+            <ul class="sec">
+            {dede:arclist row="8" typeid="5" orderby="pubdate" orderway="desc" }
+          <li><span class="date">[field:pubdate function=MyDate('m-d',@me)/]</span><span class="title"><a href="[field:arcurl /]" target="_blank" title="[field:title /]">[field:title /]</a></span></li>
+          {/dede:arclist}
+            </ul>
+        </div>
+		
+        <div class="listbox">
+		<h2><span class="more">{dede:type typeid='6'}<a href="[field:typelink/]">更多...</a></span><a href="[field:typelink/]">[field:typename/]</a>{/dede:type}</h2>
+            <ul>
+            {dede:arclist row="8" typeid="6" orderby="pubdate" orderway="desc" }
+          <li><span class="date">[field:pubdate function=MyDate('m-d',@me)/]</span><span class="title"><a href="[field:arcurl /]" target="_blank" title="[field:title /]">[field:title /]</a></span></li>
+          {/dede:arclist}
+          	
+                
+            </ul>
+        </div>
+        <div class="listbox box2">
+		<h2><span class="more">{dede:type typeid='7'}<a href="[field:typelink/]">更多...</a></span><a href="[field:typelink/]">[field:typename/]</a>{/dede:type}</h2>	
+            <ul class="sec">
+                          {dede:arclist row="8" typeid="7" orderby="pubdate" orderway="desc" }
+          <li><span class="date">[field:pubdate function=MyDate('m-d',@me)/]</span><span class="title"><a href="[field:arcurl /]" target="_blank" title="[field:title /]">[field:title /]</a></span></li>
+          {/dede:arclist}
+
+                
+            </ul>
+        </div>
+    </div>
+
+
+<div class="mainfgs"></div>
+
+<script type="text/javascript">
+function hasClass(ele,cls) { 
+	return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)')); 
+}
+
+function addClass(ele,cls) { 
+	if (!this.hasClass(ele,cls)) ele.className += " "+cls; 
+}
+
+function removeClass(ele,cls) { 
+	if (hasClass(ele,cls)) { 
+		var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)'); 
+		ele.className=ele.className.replace(reg,' '); 
+	} 
+}
+
+function link_expand(){
+	var wrap =document.getElementById("linksexpand");
+	var wrapclass = 'linksexpand';
+	if(hasClass(wrap, wrapclass)){
+		removeClass(wrap, wrapclass);
+	}
+	else{
+		addClass(wrap, wrapclass); 
+	};
+}
+</script>
+
+
+<style>
+
+.friend_link {
+    margin: 0 auto;
+    padding: 15px 0 10px 0;
+    width: 1002px;
+	clear:both;
+}
+.frlink1 {
+    border-bottom: 1px solid #EBEBEB;
+    font-size: 12px;
+    height: 24px;
+    overflow: hidden;
+    text-align: center;
+}
+.pp2 {
+    background: none repeat scroll 0 0 #FCE7E6;
+    border-left: 1px solid #EBEBEB;
+    border-right: 1px solid #EBEBEB;
+    border-top: 1px solid #EBEBEB;
+    cursor: pointer;
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 5px;
+    width: 80px;
+}
+.pp1 {
+    border-left: 1px solid #EBEBEB;
+    border-right: 1px solid #EBEBEB;
+    border-top: 1px solid #EBEBEB;
+    cursor: pointer;
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 5px;
+    width: 80px;
+}
+.frlink2 {
+    border-bottom: 1px solid #EBEBEB;
+    border-left: 1px solid #EBEBEB;
+    border-right: 1px solid #EBEBEB;
+    clear: both;
+    line-height: 20px;
+    padding: 5px 15px;
+}
+.frlinkword {
+    clear: both;
+    font-size: 12px;
+    line-height: 22px;
+    text-align: left;
+    width: 929px;
+}
+.frlinkword a {
+    color: #666666;
+}
+
+
+</style>
+
+
+
+
+<div class="friend_link">
+
+<div class="frlink1">
+
+<div id="BQDiv_0" class="pp1"><span onMouseMove="JavaScript:ChangeDiv(0,'JKDiv_','BQDiv_',4)" >合作伙伴</span></div>
+<div id="BQDiv_1" class="pp2"><span onMouseMove="JavaScript:ChangeDiv(1,'JKDiv_','BQDiv_',4)" >友情链接</span></div>
+<div id="BQDiv_2" class="pp2"><span onMouseMove="JavaScript:ChangeDiv(2,'JKDiv_','BQDiv_',4)" >u盘相关</span></div>
+<div id="BQDiv_3" class="pp2"><span onMouseMove="JavaScript:ChangeDiv(3,'JKDiv_','BQDiv_',4)" >系统相关</span></div>
+<div id="BQDiv_4" class="pp2"><span onMouseMove="JavaScript:ChangeDiv(4,'JKDiv_','BQDiv_',4)" >软件相关</span></div>
+
+
+
+</div>
+
+<div class="frlink2">
+<!--合作媒体开始-->
+<div id="JKDiv_0">
+<!--图片链接开始-->
+<div class="frlinkpic">
+<ul></ul>
+</div>
+<!--图片链接结束-->
+<!--文字链接开始-->
+<div class="frlinkword">
+{dede:flink row='24' type='text' titlelen='24' typeid='1'}
+[field:link /]
+{/dede:flink}
+</div>
+<!--文字链接结束-->
+</div>
+<!--合作媒体结束-->
+
+<div id="JKDiv_1" style="display:none;">
+<div class="frlinkword">
+
+{dede:flink row='24' type='text' titlelen='24' typeid='2'}
+[field:link /]
+{/dede:flink}
+
+</div>
+</div>
+
+
+<div id="JKDiv_2" style="display:none;">
+<div class="frlinkword">
+
+{dede:flink row='24' type='text' titlelen='24' typeid='3'}
+[field:link /]
+{/dede:flink}
+
+</div>
+</div>
+
+<div id="JKDiv_3" style="display:none;">
+<div class="frlinkword">
+{dede:flink row='24' type='text' titlelen='24' typeid='4'}
+[field:link /]
+{/dede:flink}
+
+
+</div>
+</div>
+
+<div id="JKDiv_4" style="display:none;">
+<div class="frlinkword">
+
+{dede:flink row='24' type='text' titlelen='24' typeid='5'}
+[field:link /]
+{/dede:flink}
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+<script language="JavaScript" type="text/javascript"> 
+
+var tt;
+var times=0;
+
+function ChangeDiv(divId,divName,bqdivName,zDivCount) 
+{ 
+for(i=0;i<=zDivCount;i++)
+{
+     document.getElementById(divName+i).style.display="none"; 
+	 document.getElementById(bqdivName+i).className="pp2";
+}
+document.getElementById(divName+divId).style.display="block"; 
+document.getElementById(bqdivName+divId).className="pp1";
+
+times=divId;  
+if(times==zDivCount){
+   times=0;
+}else{ 
+   times++;}
+
+clearTimeout(tt);
+tt = window.setTimeout("ChangeDiv("+times+",'"+divName+"','"+bqdivName+"',"+zDivCount+")",8000);
+} 
+
+
+window.setTimeout("ChangeDiv(0,'JKDiv_','BQDiv_',4)",8000);
+
+</script> 
+
+
+
+
+{dede:include filename="footer.htm"/}
+
+
+
+</body>
+</html>
+
+
+
